@@ -3,7 +3,7 @@
 <!-- 🖼️ PUT YOUR APP ICON HERE -->
 <!-- <img src="assets/icon.png" alt="SolarDroid Icon" width="120"/> -->
 
-# 🌞 SolarDroid
+# SolarDroid
 
 **Code, build, and run Corona/Solar2D apps entirely on your Android phone — no PC required.**
 
@@ -11,7 +11,7 @@
 
 ---
 
-## 📱 About
+##  About
 
 SolarDroid is a mobile-first development environment for **Solar2D (Corona SDK)** apps, built to run entirely on Android — no computer needed.
 
@@ -44,7 +44,7 @@ There's also a plan to open a separate repository for the build system itself, s
 
 ---
 
-## ✅ Current Features
+##  Current Features
 
 - [x] Simple code editor
 - [x] Console
@@ -53,7 +53,7 @@ There's also a plan to open a separate repository for the build system itself, s
 - [x] Game/app preview screen
 - [x] APK compilation
 
-## 🚧 Roadmap
+##  Roadmap
 
 - [ ] Advanced code editor
 - [ ] Keystore generator
@@ -66,23 +66,19 @@ There's also a plan to open a separate repository for the build system itself, s
 
 ---
 
-## 🛠️ Built With
+## Built With
 
 - **Solar2D (Corona SDK)** APIs
 - A custom build system, compiled and running entirely in **Termux**
 
 ---
 
-## 💡 Why SolarDroid?
+## Why SolarDroid?
 
 Not everyone has a PC, but almost everyone has a phone. SolarDroid exists to make Solar2D app development fully accessible from Android — write, test, compile, and share, all from your pocket.
 
 ---
 
-## 📄 License
-
-<!-- Add your license here, e.g. MIT -->
-
-## 🤝 Contributing
+## Contributing
 
 This project is under active development. Contributions, suggestions, and bug reports are welcome — feel free to open an issue or pull request.
