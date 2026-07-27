@@ -7,44 +7,49 @@
 
 **Code, build, and run Corona/Solar2D apps entirely on your Android phone — no PC required.**
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Platform: Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
+[![Language: Java](https://img.shields.io/badge/Language-Java-blue.svg)](https://www.java.com/)
+[![Solar2D](https://img.shields.io/badge/Framework-Solar2D-orange.svg)](https://solar2d.com/)
+
 </div>
 
 ---
 
 ## About
 
-SolarDroid is a mobile-first development environment for **Solar2D (formerly Corona SDK)** apps, built to run entirely on Android — no computer needed.
+SolarDroid is a mobile-first development environment for **[Solar2D](https://solar2d.com/)** (formerly Corona SDK) apps, built to run entirely on Android — no computer needed.
 
-Solar2D is an open-source, cross-platform framework for building 2D games and apps using Lua. It's known for being lightweight, fast to iterate with, and capable of shipping to Android, iOS, and more from a single codebase. SolarDroid takes that same philosophy — quick to write, quick to test — and brings it fully onto the phone itself.
+[Solar2D](https://solar2d.com/) is an open-source, cross-platform framework for building 2D games and apps using Lua. It's known for being lightweight, fast to iterate with, and capable of shipping to Android, iOS, and more.
 
 It's made for people who love building apps straight from their phone. If you enjoy coding on the go, or simply don't have access to a PC but have an Android device and the will to create, SolarDroid is for you.
 
 The app ships with its own lightweight build system, designed to compile fast with no bloated toolchains — just a no-wait pipeline so you can write code and see it running in seconds.
 
-With SolarDroid you can:
-- Write and edit Solar2D/Corona code directly on your phone
-- Instantly run and preview your project without long compile times
-- Build a working APK and share it with friends
-- Do all of this without ever touching a PC
+### With SolarDroid you can:
+- ✏️ Write and edit Solar2D/Corona code directly on your phone
+- ⚡ Instantly run and preview your project without long compile times
+- 📦 Build a working APK and share it with friends
+- 💻 Do all of this without ever touching a PC
 
-Right now the focus isn't on polishing the UI — it's on squashing bugs and expanding the editor's capabilities. A solid, functional foundation comes first.
-
-There's also a plan to open a separate repository for the build system itself, so anyone can use it independently — whether to power their own Solar2D-based tools or to modify and compile SolarDroid on their own.
+**Current Status:** Right now the focus isn't on polishing the UI — it's on squashing bugs and expanding the editor's capabilities. A solid, functional foundation comes first.
 
 ---
 
 ## Screenshots
 
 <p align="center">
-  <img src="docs-assets/1.jpg" width="200"/>
-  <img src="docs-assets/2.jpg" width="200"/>
-  <img src="docs-assets/3.jpg" width="200"/>
-  <img src="docs-assets/4.jpg" width="200"/>
+  <img src="docs-assets/1.jpg" width="200" alt="Screenshot 1"/>
+  <img src="docs-assets/2.jpg" width="200" alt="Screenshot 2"/>
+  <img src="docs-assets/3.jpg" width="200" alt="Screenshot 3"/>
+  <img src="docs-assets/4.jpg" width="200" alt="Screenshot 4"/>
 </p>
 
 ---
 
-## Current Features
+## Features
+
+### ✅ Current Features
 
 - [x] Simple code editor
 - [x] Console
@@ -53,7 +58,7 @@ There's also a plan to open a separate repository for the build system itself, s
 - [x] Game/app preview screen
 - [x] APK compilation
 
-## Roadmap
+### 📋 Roadmap
 
 - [ ] Advanced code editor
 - [ ] Keystore generator
@@ -66,10 +71,70 @@ There's also a plan to open a separate repository for the build system itself, s
 
 ---
 
+## System Requirements
+
+- **Android Version:** API 21 (Android 5.0) or higher
+- **Target SDK:** Android 14 (API 34)
+- **OpenGL ES:** 2.0 or higher
+- **RAM:** Minimum 2GB recommended
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+To build and run SolarDroid, you'll need:
+- Android Studio or Android SDK Tools
+- Java Development Kit (JDK) 8 or higher
+- Gradle build system
+
+### Installation & Build
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Nandazdev2/SolarDroid.git
+   cd SolarDroid
+   ```
+
+2. **Build the project:**
+   ```bash
+   ./gradlew build
+   ```
+
+3. **Install on Android device:**
+   ```bash
+   ./gradlew installDebug
+   ```
+
+4. **Run the app:**
+   - Launch "SolarDroid" from your Android device's app drawer
+
+---
+
 ## Built With
 
-- **Solar2D (Corona SDK)** — an open-source Lua-based framework for building 2D games and apps
-- A custom, lightweight build system designed for fast, on-device compilation
+- **[Solar2D (Corona SDK)](https://solar2d.com/)** — Open-source Lua-based framework for building 2D games and apps
+- **[Android SDK](https://developer.android.com/studio)** — Google's official Android development toolkit
+- **Java** — Primary language for the IDE implementation
+- **[APKSig](https://developer.android.com/studio/publish/app-signing)** — Android APK signing library (v4.1.1)
+- Custom lightweight build system designed for fast, on-device compilation
+
+---
+
+## Project Structure
+
+```
+SolarDroid/
+├── src/
+│   └── com/
+│       ├── ansca/          # Solar2D core integration
+│       └── mkapp/          # SolarDroid main application
+├── res/                    # Android resources (layouts, strings, etc.)
+├── libs/                   # External libraries (APKSig, etc.)
+├── AndroidManifest.xml    # Android app manifest
+└── build.gradle           # Gradle build configuration
+```
 
 ---
 
@@ -81,4 +146,44 @@ Not everyone has a PC, but almost everyone has a phone. SolarDroid exists to mak
 
 ## Contributing
 
-This project is under active development. Contributions, suggestions, and bug reports are welcome — feel free to open an issue or pull request.
+This project is under active development. Contributions, suggestions, and bug reports are welcome!
+
+- **Report a Bug:** [Open an Issue](https://github.com/Nandazdev2/SolarDroid/issues)
+- **Suggest a Feature:** [Create a Discussion](https://github.com/Nandazdev2/SolarDroid/discussions)
+- **Submit Code:** [Create a Pull Request](https://github.com/Nandazdev2/SolarDroid/pulls)
+
+---
+
+## License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Acknowledgments
+
+- **[Solar2D](https://solar2d.com/)** — The amazing open-source Lua-based game framework
+- **[Android Open Source Project](https://source.android.com/)** — For the Android platform and tools
+- **[Google](https://developers.google.com/)** — For Android SDK and development tools
+
+---
+
+## Contact & Support
+
+- 📧 **Report Issues:** [GitHub Issues](https://github.com/Nandazdev2/SolarDroid/issues)
+- 💬 **Discussions:** [GitHub Discussions](https://github.com/Nandazdev2/SolarDroid/discussions)
+- 🌐 **Learn Solar2D:** [Official Documentation](https://docs.solar2d.com/)
+
+---
+
+## Useful Links
+
+- [Solar2D Official Website](https://solar2d.com/)
+- [Solar2D Documentation](https://docs.solar2d.com/)
+- [Solar2D GitHub Repository](https://github.com/coronalabs/corona)
+- [Android Developer Guide](https://developer.android.com/guide)
+- [Lua Programming Language](https://www.lua.org/)
+
+---
+
+**Made with ❤️ for mobile developers who love coding on the go.**
