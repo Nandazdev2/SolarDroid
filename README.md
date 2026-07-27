@@ -33,16 +33,14 @@ There's also a plan to open a separate repository for the build system itself, s
 
 ---
 
-<!-- 📸 PUT YOUR SCREENSHOTS HERE -->
-<!--
 ## Screenshots
 
 <p align="center">
-  <img src="assets/screenshot1.png" width="250"/>
-  <img src="assets/screenshot2.png" width="250"/>
-  <img src="assets/screenshot3.png" width="250"/>
+  <img src="docs-assets/1.jpg" width="200"/>
+  <img src="docs-assets/2.jpg" width="200"/>
+  <img src="docs-assets/3.jpg" width="200"/>
+  <img src="docs-assets/4.jpg" width="200"/>
 </p>
--->
 
 ---
 
