@@ -24,8 +24,8 @@ This project and everyone participating in it is governed by our Code of Conduct
 > **Note:** Please don't file an issue to ask a question. Use discussions instead.
 
 - 💬 Ask in [GitHub Discussions](https://github.com/Nandazdev2/SolarDroid/discussions)
-- 🌐 Visit [Solar2D Community Forum](https://solar2d.com/forums/)
-- 📚 Check [Documentation](https://docs.solar2d.com/)
+- 🌐 Visit [Solar2D Community Forum](https://forums.solar2d.com/)
+- 📚 Check [Corona Documentation](https://docs.coronalabs.com/)
 
 ---
 
@@ -334,11 +334,12 @@ Closes #123
 
 ---
 
-## Community
+## Community & Resources
 
 - 💬 [GitHub Discussions](https://github.com/Nandazdev2/SolarDroid/discussions)
-- 🌐 [Solar2D Forums](https://solar2d.com/forums/)
-- 📚 [Documentation](https://docs.solar2d.com/)
+- 🌐 [Solar2D Forums](https://forums.solar2d.com/)
+- 📚 [Corona Documentation](https://docs.coronalabs.com/)
+- 🔧 [Corona API Reference](https://docs.coronalabs.com/api/)
 
 ---
 
