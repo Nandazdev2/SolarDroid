@@ -96,11 +96,11 @@ It's designed for:
 ### Solar2D Resources
 
 - 🌐 [Official Website](https://solar2d.com/)
-- 📚 [Complete Documentation](https://docs.solar2d.com/)
-- 🔧 [API Reference](https://docs.solar2d.com/api/library/)
+- 📚 [Complete Documentation](https://docs.coronalabs.com/)
+- 🔧 [API Reference](https://docs.coronalabs.com/api/)
 - 💻 [GitHub Repository](https://github.com/coronalabs/corona)
-- 👥 [Community Forum](https://solar2d.com/forums/)
-- 🎓 [Tutorials & Guides](https://docs.solar2d.com/tutorials/)
+- 👥 [Community Forum](https://forums.solar2d.com/)
+- 🎓 [Tutorials & Guides](https://docs.coronalabs.com/guide/)
 
 ### Getting Started with Solar2D
 
@@ -378,21 +378,23 @@ copies of the Software...
 
 ### Getting Help
 
-- 📖 **Read the Docs** — Check [Solar2D Documentation](https://docs.solar2d.com/)
+- 📖 **Read the Docs** — Check [Corona/Solar2D Documentation](https://docs.coronalabs.com/)
 - 🐛 **Report a Bug** — [GitHub Issues](https://github.com/Nandazdev2/SolarDroid/issues)
 - 💬 **Ask a Question** — [GitHub Discussions](https://github.com/Nandazdev2/SolarDroid/discussions)
-- 🌐 **Visit Forums** — [Solar2D Community Forum](https://solar2d.com/forums/)
+- 🌐 **Visit Forums** — [Solar2D Community Forum](https://forums.solar2d.com/)
 
 ### Useful Links
 
-| Resource | Description |
-|----------|-------------|
-| [Solar2D Website](https://solar2d.com/) | Official Solar2D home |
-| [Solar2D Docs](https://docs.solar2d.com/) | Complete documentation |
-| [Solar2D API](https://docs.solar2d.com/api/library/) | API reference |
-| [Solar2D GitHub](https://github.com/coronalabs/corona) | Corona open source |
-| [Android Docs](https://developer.android.com/guide) | Android development guide |
-| [Lua Manual](https://www.lua.org/manual/) | Lua programming reference |
+| Resource | Description | Link |
+|----------|-------------|------|
+| Solar2D Website | Official Solar2D home | [solar2d.com](https://solar2d.com/) |
+| Corona Documentation | Complete API & guides | [docs.coronalabs.com](https://docs.coronalabs.com/) |
+| API Reference | Corona/Solar2D API | [docs.coronalabs.com/api](https://docs.coronalabs.com/api/) |
+| Guides & Tutorials | Learn Solar2D development | [docs.coronalabs.com/guide](https://docs.coronalabs.com/guide/) |
+| Community Forum | Solar2D discussions | [forums.solar2d.com](https://forums.solar2d.com/) |
+| Solar2D GitHub | Corona open source | [github.com/coronalabs/corona](https://github.com/coronalabs/corona) |
+| Android Docs | Android development guide | [developer.android.com/guide](https://developer.android.com/guide) |
+| Lua Manual | Lua programming reference | [lua.org/manual](https://www.lua.org/manual/) |
 
 ---
 
@@ -411,7 +413,7 @@ copies of the Software...
 - **[Solar2D/Corona Labs](https://solar2d.com/)** — For the incredible open-source Lua framework
 - **[Android Open Source Project](https://source.android.com/)** — For the Android platform
 - **[Google](https://developers.google.com/)** — For Android SDK and development tools
-- **Community** — For feedback and support
+- **Community** — For feedback and support at [forums.solar2d.com](https://forums.solar2d.com/)
 
 ---
 
