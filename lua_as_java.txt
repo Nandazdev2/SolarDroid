@@ -1,0 +1,36 @@
+        "display.setDefault(\"background\", 0.05, 0.05, 0.1)\n" +
+        "\n" +
+        "local title = display.newText(\"Teste 2: sem physics\", display.contentCenterX, 40, native.systemFont, 20)\n" +
+        "title:setFillColor(1, 1, 1)\n" +
+        "\n" +
+        "print(\"Passo 1 OK: basico funcionou\")\n" +
+        "\n" +
+        "local ok, err = pcall(function()\n" +
+        "    local widget = require(\"widget\")\n" +
+        "    print(\"Passo 2 OK: widget carregado\")\n" +
+        "\n" +
+        "    local myButton = widget.newButton({\n" +
+        "        left = display.contentCenterX - 60,\n" +
+        "        top = 100,\n" +
+        "        width = 120,\n" +
+        "        height = 40,\n" +
+        "        label = \"Testar\",\n" +
+        "        fontSize = 14,\n" +
+        "        onRelease = function() print(\"Botao clicado!\") end,\n" +
+        "    })\n" +
+        "end)\n" +
+        "\n" +
+        "if not ok then\n" +
+        "    local errText = display.newText(\"ERRO WIDGET: \" .. tostring(err), display.contentCenterX, 160, native.systemFont, 12)\n" +
+        "    errText:setFillColor(1, 0.3, 0.3)\n" +
+        "    print(\"ERRO widget: \" .. tostring(err))\n" +
+        "else\n" +
+        "    local okText = display.newText(\"Widget OK!\", display.contentCenterX, 160, native.systemFont, 16)\n" +
+        "    okText:setFillColor(0.3, 1, 0.3)\n" +
+        "end\n" +
+        "\n" +
+        "local circle = display.newCircle(display.contentCenterX, 250, 30)\n" +
+        "circle:setFillColor(0.3, 0.7, 1)\n" +
+        "transition.to(circle, {rotation=360, time=2000, iterations=-1})\n" +
+        "\n" +
+        "print(\"Passo 3 OK: script terminou de rodar\")\n";
