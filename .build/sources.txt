@@ -13,6 +13,7 @@
 /storage/emulated/0/Documents/Projectos/SolarDroid/src/com/mkapp/solardroid/StandaloneRunActivity.java
 /storage/emulated/0/Documents/Projectos/SolarDroid/src/com/mkapp/solardroid/BuildApkDialog.java
 /storage/emulated/0/Documents/Projectos/SolarDroid/src/com/mkapp/solardroid/TestMinimalActivity.java
+/storage/emulated/0/Documents/Projectos/SolarDroid/src/com/mkapp/solardroid/PreviewBootstrap.java
 /storage/emulated/0/Documents/Projectos/SolarDroid/src/com/ansca/corona/ActivityIndicatorDialog.java
 /storage/emulated/0/Documents/Projectos/SolarDroid/src/com/ansca/corona/ApplicationContextProvider.java
 /storage/emulated/0/Documents/Projectos/SolarDroid/src/com/ansca/corona/AudioRecorder.java

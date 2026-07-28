@@ -51,6 +51,7 @@
 /storage/emulated/0/Documents/Projectos/SolarDroid/.build/obj/com/mkapp/solardroid/ProjectListActivity$5.class
 /storage/emulated/0/Documents/Projectos/SolarDroid/.build/obj/com/mkapp/solardroid/ProjectListActivity$6.class
 /storage/emulated/0/Documents/Projectos/SolarDroid/.build/obj/com/mkapp/solardroid/ProjectListActivity$7.class
+/storage/emulated/0/Documents/Projectos/SolarDroid/.build/obj/com/mkapp/solardroid/PreviewBootstrap.class
 /storage/emulated/0/Documents/Projectos/SolarDroid/.build/obj/com/ansca/corona/CoronaView$SendEventListener.class
 /storage/emulated/0/Documents/Projectos/SolarDroid/.build/obj/com/ansca/corona/CoronaView$CoronaEventListener.class
 /storage/emulated/0/Documents/Projectos/SolarDroid/.build/obj/com/ansca/corona/CoronaView$1.class

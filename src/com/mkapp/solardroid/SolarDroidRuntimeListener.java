@@ -8,14 +8,23 @@ public class SolarDroidRuntimeListener implements CoronaRuntimeListener {
 
     @Override
     public void onLoaded(CoronaRuntime runtime) {
-        ConsoleLog.add("[DEBUG] onLoaded foi chamado");
         try {
             LuaState L = runtime.getLuaState();
             L.pushJavaFunction(new SolarDroidPrintFunction());
             L.setField(LuaState.GLOBALSINDEX, "printf");
-            ConsoleLog.add("[DEBUG] printf registrado");
         } catch (Exception e) {
-            ConsoleLog.add("[DEBUG] ERRO: " + e.getMessage());
+            ConsoleLog.add("[DEBUG] ERRO ao registrar printf: " + e.getMessage());
+        }
+
+        try {
+            LuaState L = runtime.getLuaState();
+            java.io.ByteArrayInputStream is = new java.io.ByteArrayInputStream(
+                PreviewBootstrap.LUA_CODE.getBytes("UTF-8")
+            );
+            L.load(is, "previewBootstrap");
+            L.call(0, 0);
+        } catch (Exception e) {
+            ConsoleLog.add("[DEBUG] ERRO ao injetar bootstrap: " + e.getMessage());
         }
     }
 

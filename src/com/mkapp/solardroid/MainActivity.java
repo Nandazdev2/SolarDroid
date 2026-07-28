@@ -45,6 +45,16 @@ public class MainActivity extends Activity {
         } catch (Exception e) {
             ConsoleLog.add("[DEBUG] Erro copiando imagens pra raiz: " + e.getMessage());
         }
+        try {
+            clearOldProjectImages(documentsDir);
+        } catch (Exception e) {
+            ConsoleLog.add("[DEBUG] Erro limpando imagens antigas: " + e.getMessage());
+        }
+        try {
+            copyProjectImagesToRoot(projectDir, documentsDir);
+        } catch (Exception e) {
+            ConsoleLog.add("[DEBUG] Erro copiando imagens do projeto: " + e.getMessage());
+        }
 
         String projectPath = projectDir.getAbsolutePath();
         if (!projectPath.endsWith("/")) {
@@ -98,6 +108,12 @@ public class MainActivity extends Activity {
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                     ConsoleLog.add("[DEBUG] Orientacao aplicada: portrait");
                 }
+            }
+
+            java.util.regex.Pattern immersivePattern = java.util.regex.Pattern.compile("immersive\\s*=\\s*(true|false)");
+            java.util.regex.Matcher immersiveMatcher = immersivePattern.matcher(afterSolarDroid);
+            if (immersiveMatcher.find() && immersiveMatcher.group(1).equals("true")) {
+                applyImmersiveMode();
             }
         } catch (Exception e) {
             ConsoleLog.add("[DEBUG] Erro lendo config.lua: " + e.getMessage());
@@ -165,5 +181,53 @@ public class MainActivity extends Activity {
         if (myCoronaView != null) {
             myCoronaView.destroy();
         }
+    }
+
+    private void copyProjectImagesToRoot(File dir, File rootDestDir) throws Exception {
+        File[] files = dir.listFiles();
+        if (files == null) return;
+        for (File f : files) {
+            if (f.isDirectory()) {
+                copyProjectImagesToRoot(f, rootDestDir);
+            } else {
+                String lower = f.getName().toLowerCase();
+                if (lower.endsWith(".png") || lower.endsWith(".jpg") || lower.endsWith(".jpeg")) {
+                    File destFile = new File(rootDestDir, f.getName());
+                    InputStream in = new FileInputStream(f);
+                    OutputStream out = new FileOutputStream(destFile);
+                    byte[] buffer = new byte[8192];
+                    int read;
+                    while ((read = in.read(buffer)) != -1) {
+                        out.write(buffer, 0, read);
+                    }
+                    in.close();
+                    out.close();
+                }
+            }
+        }
+    }
+
+    private void clearOldProjectImages(File rootDestDir) {
+        File[] files = rootDestDir.listFiles();
+        if (files == null) return;
+        for (File f : files) {
+            if (f.isFile()) {
+                String lower = f.getName().toLowerCase();
+                if (lower.endsWith(".png") || lower.endsWith(".jpg") || lower.endsWith(".jpeg")) {
+                    f.delete();
+                }
+            }
+        }
+    }
+
+    private void applyImmersiveMode() {
+        getWindow().getDecorView().setSystemUiVisibility(
+            android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+            | android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+            | android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            | android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            | android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
+            | android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        );
     }
 }

@@ -41,6 +41,8 @@ public class ProjectManager {
         "solarDroid =\n" +
         "{\n" +
         "\torientation = \"portrait\", -- portrait ou landscape\n" +
+        "\timmersive = false, -- true esconde status bar e navigation bar\n" +
+        "\tpermissions = {}, -- ex: {\"android.permission.CAMERA\", \"android.permission.RECORD_AUDIO\"}\n" +
         "}\n";
 
     public static File getProjectsRootDir(Context context) {

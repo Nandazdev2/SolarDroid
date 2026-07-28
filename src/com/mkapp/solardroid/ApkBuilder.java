@@ -113,7 +113,35 @@ public class ApkBuilder {
         f.delete();
     }
 
-    private String generateManifest(String packageName, String appName, String versionName, int versionCode) {
+    private String readOrientationFromConfig(File projectDir) {
+        File configFile = new File(projectDir, "config.lua");
+        if (!configFile.exists()) {
+            return "portrait";
+        }
+        try {
+            StringBuilder sb = new StringBuilder();
+            java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(new FileInputStream(configFile), "UTF-8"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line).append("\n");
+            }
+            reader.close();
+            String content = sb.toString();
+            int idx = content.indexOf("solarDroid");
+            if (idx < 0) return "portrait";
+            String after = content.substring(idx);
+            java.util.regex.Pattern p = java.util.regex.Pattern.compile("orientation\\s*=\\s*[\"']([a-zA-Z]+)[\"']");
+            java.util.regex.Matcher m = p.matcher(after);
+            if (m.find()) {
+                return m.group(1).toLowerCase();
+            }
+        } catch (Exception e) {
+            // ignora, usa padrao
+        }
+        return "portrait";
+    }
+
+    private String generateManifest(String packageName, String appName, String versionName, int versionCode, String orientation) {
         StringBuilder sb = new StringBuilder();
         sb.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
         sb.append("<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n");
@@ -129,8 +157,10 @@ public class ApkBuilder {
         sb.append("        android:hardwareAccelerated=\"true\"\n");
         sb.append("        android:theme=\"@android:style/Theme.Material.NoActionBar\"\n");
         sb.append(">\n");
+        String androidOrientation = orientation.equals("landscape") ? "landscape" : "portrait";
         sb.append("        <activity\n");
         sb.append("            android:name=\"com.mkapp.solardroid.StandaloneRunActivity\"\n");
+        sb.append("            android:screenOrientation=\"").append(androidOrientation).append("\"\n");
         sb.append("            android:theme=\"@android:style/Theme.Material.NoActionBar\"\n");
         sb.append("            android:exported=\"true\">\n");
         sb.append("            <intent-filter>\n");
@@ -176,7 +206,8 @@ public class ApkBuilder {
         File outputApk = new File(work, appName.replaceAll("[^a-zA-Z0-9]", "_") + ".apk");
 
         log("Gerando AndroidManifest.xml...");
-        String manifestContent = generateManifest(packageName, appName, versionName, versionCode);
+        String orientation = readOrientationFromConfig(projectDir);
+        String manifestContent = generateManifest(packageName, appName, versionName, versionCode, orientation);
         FileOutputStream manifestOut = new FileOutputStream(manifestFile);
         manifestOut.write(manifestContent.getBytes("UTF-8"));
         manifestOut.close();
@@ -238,6 +269,15 @@ public class ApkBuilder {
         templateZip.close();
 
         // 3. Adicionar assets do projeto do usuario (main.lua, config.lua, etc.)
+        log("Copiando arquivos de: " + projectDir.getAbsolutePath());
+        File[] debugFiles = projectDir.listFiles();
+        if (debugFiles != null) {
+            for (File df : debugFiles) {
+                log("  encontrado: " + df.getName() + (df.isDirectory() ? " [pasta]" : ""));
+            }
+        } else {
+            log("  ERRO: projectDir.listFiles() retornou null!");
+        }
         addProjectAssets(zos, projectDir, "assets/SolarProject", addedEntries);
 
         zos.close();

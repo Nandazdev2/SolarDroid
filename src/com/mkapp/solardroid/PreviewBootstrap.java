@@ -21,7 +21,7 @@ public class PreviewBootstrap {
         "        local newArgs = {}\n" +
         "        for i = 1, n do newArgs[i] = select(i, ...) end\n" +
         "        table.insert(newArgs, 2, system.DocumentsDirectory)\n" +
-        "        local ok2, result2 = pcall(_origNewImage, table.unpack(newArgs))\n" +
+        "        local ok2, result2 = pcall(_origNewImage, unpack(newArgs))\n" +
         "        if ok2 and result2 then return result2 end\n" +
         "    end\n" +
         "    return result\n" +
@@ -37,7 +37,7 @@ public class PreviewBootstrap {
         "    local insertPos = 2\n" +
         "    if type(newArgs[1]) == \"table\" then insertPos = 3 end\n" +
         "    table.insert(newArgs, insertPos, system.DocumentsDirectory)\n" +
-        "    local ok2, result2 = pcall(_origNewImageRect, table.unpack(newArgs))\n" +
+        "    local ok2, result2 = pcall(_origNewImageRect, unpack(newArgs))\n" +
         "    if ok2 and result2 then return result2 end\n" +
         "    return result\n" +
         "end\n" +
